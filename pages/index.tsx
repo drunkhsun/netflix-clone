@@ -1,6 +1,6 @@
-import useCurrentUser from '@/hooks/useCurrentUser';
-import { NextPageContext } from 'next';
-import { getSession, signOut } from 'next-auth/react';
+import { NextPageContext, NextApiRequest, NextApiResponse } from 'next';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from './api/auth/[...nextauth]';
 
 import Navbar from '@/components/Navbar';
 import Billboard from '@/components/Billboard';
@@ -11,7 +11,7 @@ import InfoModal from '@/components/InfoModal';
 import useInfoModal from '@/hooks/useInfoModal';
 
 export async function getServerSideProps(context: NextPageContext) {
-  const session = await getSession(context);
+  const session = await getServerSession(context.req as NextApiRequest, context.res as NextApiResponse, authOptions);
 
   if (!session) {
     return {
