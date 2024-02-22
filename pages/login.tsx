@@ -152,13 +152,15 @@ const Login = () => {
                 <Link
                   className='text-blue-600 hover:underline cursor-pointer'
                   href='https://policies.google.com/privacy'
-                >
+                  target='_blank'
+                  >
                   隱私權聲明
                 </Link>
                 》與《
                 <Link
                   className='text-blue-600 hover:underline cursor-pointer'
                   href='https://policies.google.com/terms'
+                  target='_blank'
                 >
                   服務條款
                 </Link>
