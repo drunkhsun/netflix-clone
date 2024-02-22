@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Head>
         <title>Netflix Clone</title>
       </Head>
-      <main>{children}</main>
+      {children}
     </>
   );
 };
