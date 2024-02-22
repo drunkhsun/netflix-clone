@@ -1,6 +1,7 @@
 import { NextPageContext, NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from './api/auth/[...nextauth]';
+import Head from 'next/head';
 
 import Navbar from '@/components/Navbar';
 import Billboard from '@/components/Billboard';
@@ -34,6 +35,9 @@ export default function Home() {
 
   return (
     <>
+      {/* <Head>
+        <title>Netflix Clone</title>
+      </Head> */}
       <InfoModal
         visible={isOpen}
         onClose={closeModal}
